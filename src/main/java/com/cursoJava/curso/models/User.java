@@ -5,17 +5,16 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @ToString @EqualsAndHashCode
 @Table(name= "usuario")
 public class User {
 
-    @Id @Getter @Setter @Column(name = "id_usu", nullable = false)
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Getter @Setter @Column(name = "id_usu", nullable = false)
     private Long id;
 
     @Getter @Setter @Column(name="persona")
