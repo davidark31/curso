@@ -34,4 +34,11 @@ public class UserDaoImp implements UserDao {
     public void register(User user) {
         entityManager.merge(user);
     }
+
+    @Override
+    public boolean checkEmailPassword(User user) {
+        String query = "FROM User where nom_usu=:username & contrasena_usu=:password";
+        .setParameter(name "user", user.getUser())
+        .setParameter(name "password", user.getPassword())
+    }
 }
