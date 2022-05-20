@@ -16,6 +16,11 @@ let data={};
     },
     body : JSON.stringify(data)
     });
-    const response = await request.json();
-}
+    const response = await request.text();
 
+    if(response=='Ok'){
+        windows.location.href='users.html'
+    }else{
+        alert('Usuario no valido');
+    }
+}

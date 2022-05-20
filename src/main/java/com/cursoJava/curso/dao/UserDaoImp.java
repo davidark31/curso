@@ -19,7 +19,6 @@ public class UserDaoImp implements UserDao {
     @Override
     @Transactional
     public List<User> getUsers() {
-
         String query = "FROM User";
         return entityManager.createQuery(query).getResultList();
     }
@@ -37,8 +36,11 @@ public class UserDaoImp implements UserDao {
 
     @Override
     public boolean checkEmailPassword(User user) {
-        String query = "FROM User where nom_usu=:username & contrasena_usu=:password";
-        .setParameter(name "user", user.getUser())
-        .setParameter(name "password", user.getPassword())
+        String query = "FROM User where user=:user AND password=:password";
+        List<User> list = entityManager.createQuery(query)
+        .setParameter("user", user.getUser() )
+        .setParameter("password",  user.getPassword())
+                .getResultList();
+        return !list.isEmpty();
     }
 }
