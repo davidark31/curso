@@ -18,8 +18,10 @@ let data={};
     });
     const response = await request.text();
 
-    if(response=='Ok'){
-        windows.location.href='users.html'
+    if(response!='FAIL'){
+    localStorage.token=response;
+    localStorage.user=data.user;
+        window.location.href='users.html'
     }else{
         alert('Usuario no valido');
     }

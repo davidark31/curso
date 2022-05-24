@@ -25,5 +25,7 @@ let data={};
     body : JSON.stringify(data)
     });
     const users = await request.json();
+    alert('Usuario registrado exitosamente')
+    window.location.href='login.html'
 }
 

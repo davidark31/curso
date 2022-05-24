@@ -12,5 +12,5 @@ public interface UserDao {
 
     void register(User user);
 
-    boolean checkEmailPassword(User user);
+    User getUserByCredencials(User user);
 }
