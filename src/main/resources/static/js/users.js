@@ -16,8 +16,6 @@ updateUserName=()=>{
     document.getElementById('txtusername').outerHTML=localStorage.user;
 }
 
-
-
 async function loadUsers(){
     const request = await fetch('api/users', {
     method: 'GET',
