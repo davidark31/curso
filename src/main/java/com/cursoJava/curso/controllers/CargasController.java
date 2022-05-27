@@ -29,7 +29,7 @@ public class CargasController {
     @RequestMapping(value = "api/cargas",method = RequestMethod.GET)
     public List<Carga> getCargas(@RequestHeader(value = "Authorization") String token ) {
         if(validateToken(token)){
-            return cargaDao.getCargas();
+            return cargaDao.getCargasData();
         }
         return null;
     }

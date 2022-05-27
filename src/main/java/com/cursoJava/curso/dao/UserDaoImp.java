@@ -24,6 +24,7 @@ public class UserDaoImp implements UserDao {
         return entityManager.createQuery(query).getResultList();
     }
 
+
     @Override
     public void delete(long id) {
         User user=entityManager.find(User.class,id);

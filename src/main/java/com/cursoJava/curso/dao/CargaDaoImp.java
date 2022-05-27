@@ -22,6 +22,12 @@ public class CargaDaoImp implements CargaDao{
         return entityManager.createQuery(query).getResultList();
     }
 
+    @Transactional
+    public List<Carga> getCargasData() {
+        String query = "SELECT c.id_carga, c.patente, c.nro_bus, c.kil_ini, c.kil_act, c.litros_carg, c.fecha, c.costo, con.nombre_conductor, u.persona from carga c,conductor con, usuario u ";
+        return entityManager.createQuery(query).getResultList();
+    }
+
     @Override
     public void register(Carga carga) {entityManager.merge(carga);}
 

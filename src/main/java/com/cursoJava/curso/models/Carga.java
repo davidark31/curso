@@ -7,7 +7,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @ToString
@@ -38,14 +37,18 @@ public class Carga {
     private double litros_carg;
 
     @Getter @Setter @Column(name="fecha")
-    private Date fecha;
+    private String fecha;
 
     @Getter @Setter @Column(name="costo")
     private double costo;
 
-    @Getter @Setter @Column(name="rut_conductor")
-    private String rut_conductor;
+    @Getter @Setter
+    @ManyToOne
+    @JoinColumn(name="rut_conductor")
+    private Conductor conductor;
 
-    @Getter @Setter @Column(name="id_usu")
-    private int id_usu;
+    @Getter @Setter
+    @ManyToOne
+    @JoinColumn(name="id_usu")
+    private User user;
 }
