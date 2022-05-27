@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @ToString
@@ -28,4 +29,8 @@ public class Conductor {
     @Getter @Setter
     @Column(name = "autorizado")
     private int autorizado;
+
+    @OneToMany(mappedBy = "conductor")
+    List<Carga> cargaList;
+
 }
