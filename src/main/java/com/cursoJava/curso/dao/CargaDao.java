@@ -8,7 +8,5 @@ public interface CargaDao {
 
     List<Carga> getCargas();
 
-    List<Carga> getCargasData();
-
     void register(Carga carga);
 }

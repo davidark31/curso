@@ -22,12 +22,12 @@ async function loadCargas(){
     headers: getHeaders()
     });
     const cargas = await request.json();
-
+    console.log(cargas);
     let datos='';
-        for(let u of carga){
+        for(let u of cargas){
          btn_delete='<a href="#" class="btn btn-danger btn-circle btn-sm" onclick="editCarga('+u.id_carga+')" ><i class="fas fa-trash"></i></a>';
         let html ='<tr><td>'+u.patente+'</td><td>'+u.nro_bus+'</td><td>'+u.kil_ini+'</td><td>'+u.kil_act+'</td><td>'+
-        u.litros_carg+'</td><td>'+u.fecha+'</td><td>'+u.costo+'</td><td>'+u.nombre_conductor+'</td><td>'+u.persona+'</td><td>'+btn_delete+'</td></tr>';
+        u.litros_carg+'</td><td>'+u.fecha+'</td><td>'+u.costo+'</td><td>'+u.conductor.nombre_conductor+'</td><td>'+u.user.name+'</td><td>'+btn_delete+'</td></tr>';
         datos+=html;
         document.querySelector('#users tbody').outerHTML=datos;
     }

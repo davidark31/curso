@@ -26,7 +26,8 @@ public class User {
     @Getter @Setter @Column(name="contrasena_usu")
     private String password;
 
-    @Getter @Setter @Column(name="id_tipo")
-    private int id_type;
+    @Getter @Setter
+    @ManyToOne @JoinColumn(name="id_tipo")
+    private Tipo_usuario tipo;
 
 }

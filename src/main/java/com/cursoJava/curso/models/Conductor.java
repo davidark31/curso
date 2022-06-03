@@ -15,11 +15,8 @@ import java.util.List;
 @Table(name= "conductor")
 public class Conductor {
 
-
     @Id
-    @Getter
-    @Setter
-    @Column(name = "rut_conductor", nullable = false)
+    @Getter @Setter @Column(name = "rut_conductor", nullable = false)
     private String rut;
 
     @Getter @Setter
@@ -30,7 +27,7 @@ public class Conductor {
     @Column(name = "autorizado")
     private int autorizado;
 
-    @OneToMany(mappedBy = "conductor")
-    List<Carga> cargaList;
+ //   @OneToMany(mappedBy = "conductor")
+ //   List<Carga> cargaList;
 
 }

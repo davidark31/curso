@@ -1,8 +1,7 @@
 package com.cursoJava.curso.controllers;
 
-
-import com.cursoJava.curso.dao.CargaDao;
-import com.cursoJava.curso.models.Carga;
+import com.cursoJava.curso.dao.BusDao;
+import com.cursoJava.curso.models.Bus;
 import com.cursoJava.curso.utils.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -13,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class CargasController {
+public class BusesController {
 
     @Autowired
-    private CargaDao cargaDao;
+    private BusDao busDao;
 
     @Autowired
     private JWTUtil jwtUtil;
@@ -26,12 +25,9 @@ public class CargasController {
         return idUser!=null;
     }
 
-    @RequestMapping(value = "api/cargas",method = RequestMethod.GET)
-    public List<Carga> getCargasData(@RequestHeader(value = "Authorization") String token ) {
-        if(validateToken(token)){
-            return cargaDao.getCargas();
-        }
-        return null;
-    }
+    @RequestMapping(value = "api/buses",method = RequestMethod.GET)
+    public List<Bus> getBuses() {
+        return busDao.getBuses();
 
+    }
 }

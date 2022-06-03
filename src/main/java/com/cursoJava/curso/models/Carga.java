@@ -1,6 +1,5 @@
 package com.cursoJava.curso.models;
 
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,9 +15,7 @@ public class Carga {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Getter
-    @Setter
-    @Column(name = "id_carga", nullable = false)
+    @Getter @Setter @Column(name = "id_carga", nullable = false)
     private Long id_carga;
 
     @Getter @Setter @Column(name="patente")
@@ -43,12 +40,10 @@ public class Carga {
     private double costo;
 
     @Getter @Setter
-    @ManyToOne
-    @JoinColumn(name="rut_conductor")
+    @ManyToOne @JoinColumn(name="rut_conductor")
     private Conductor conductor;
 
     @Getter @Setter
-    @ManyToOne
-    @JoinColumn(name="id_usu")
+    @ManyToOne @JoinColumn(name="id_usu")
     private User user;
 }

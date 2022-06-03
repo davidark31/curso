@@ -27,7 +27,7 @@ async function loadUsers(){
     let datos='';
         for(let u of users){
          btn_delete='<a href="#" class="btn btn-danger btn-circle btn-sm" onclick="deleteUser('+u.id+')" ><i class="fas fa-trash"></i></a>';
-        let html ='<tr><td>'+u.id+'</td><td>'+u.user+'</td><td>'+u.name+'</td><td>'+u.id_type+'</td><td>'+btn_delete+'</td></tr>';
+        let html ='<tr><td>'+u.id+'</td><td>'+u.user+'</td><td>'+u.name+'</td><td>'+u.tipo.nombre_tipo+'</td><td>'+btn_delete+'</td></tr>';
         datos+=html;
 
         document.querySelector('#users tbody').outerHTML=datos;
